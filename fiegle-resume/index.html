@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Ryan Fiegle - Senior Software Engineer" />
+        <title>Ryan Fiegle</title>
+        <style>
+            :root {
+                --bg: #f0f0f0;
+                --card: #fff;
+                --accent: #1d1d1d;
+                --muted: #535353;
+                --radius: 12px;
+                --max-width: 1100px
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            html, body {
+                height: 100%
+            }
+
+            body {
+                font-family: Inter,Arial,Helvetica,sans-serif;
+                line-height: 1.5;
+                background: var(--bg);
+                color: #111;
+                margin: 0;
+                padding: 24px
+            }
+
+            .container {
+                max-width: var(--max-width);
+                margin: 0 auto
+            }
+
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 18px
+            }
+
+            .title {
+                flex: 1
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin: 0;
+                color: var(--accent)
+            }
+
+            .subtitle {
+                color: var(--muted);
+                margin: 0;
+                font-size: 0.95rem
+            }
+
+            nav {
+                background: linear-gradient(#535353,#1d1d1d);
+                padding: 8px;
+                border-radius: var(--radius);
+                box-shadow: 0 4px 12px rgba(0,0,0,.08);
+                margin-bottom: 18px
+            }
+
+            .menu {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0
+            }
+
+                .menu button {
+                    background: transparent;
+                    border: 0;
+                    color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    cursor: pointer
+                }
+
+                    .menu button[aria-current="true"] {
+                        background: #fff;
+                        color: var(--accent)
+                    }
+
+            .layout {
+                display: flex;
+                gap: 20px
+            }
+
+            main {
+                flex: 1;
+                background: var(--card);
+                padding: 18px;
+                border-radius: var(--radius);
+                box-shadow: 0 6px 18px rgba(0,0,0,.06)
+            }
+
+            aside {
+                width: 240px;
+                min-width: 200px
+            }
+
+            .card {
+                background: var(--card);
+                padding: 12px;
+                border-radius: 10px
+            }
+
+            h2 {
+                font-size: 1.1rem;
+                margin: 0 0 8px
+            }
+
+            h3 {
+                margin: 0 0 8px;
+                font-size: 1rem
+            }
+
+            ul {
+                margin: 8px 0 16px 18px
+            }
+
+            .section {
+                display: none
+            }
+
+                .section[data-active="true"] {
+                    display: block
+                }
+
+            .exp-controls {
+                margin-bottom: 12px;
+                display: flex;
+                gap: 8px
+            }
+
+            .skillHeader {
+                min-width: 220px;
+                padding-right: 20px;
+                position: relative;
+            }
+
+                .skillHeader h3 {
+                    text-decoration: underline;
+                }
+
+                .skillHeader ul {
+                    margin-left: 12px;
+                }
+
+                .skillHeader::after {
+                    background: #e5e7eb;
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 18%;
+                    bottom: 18%;
+                    width: 1px;
+                }
+
+            .btn {
+                background: #fff;
+                border: 1px solid #ddd;
+                padding: 6px 10px;
+                border-radius: 8px;
+                cursor: pointer
+            }
+
+            .exp-item {
+                margin-bottom: 12px
+            }
+
+                .exp-item .toggle {
+                    background: transparent;
+                    border: 0;
+                    color: var(--accent);
+                    font-weight: 600;
+                    cursor: pointer;
+                    padding: 4px;
+                    text-align: left;
+                }
+
+                .exp-item ul {
+                    margin-top: 8px
+                }
+
+            footer {
+                margin-top: 18px;
+                text-align: center;
+                color: var(--muted)
+            }
+
+            @media (max-width:880px) {
+                .layout {
+                    flex-direction: column
+                }
+
+                aside {
+                    width: 100%
+                }
+
+                nav .menu {
+                    justify-content: center
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="title">
+                    <h1>Ryan Fiegle - Senior Software Engineer</h1>
+                    <p class="subtitle">.NET, JavaScript, SQL — Raleigh / RTP / Morrisville, NC</p>
+                </div>
+            </header>
+            <nav aria-label="Primary">
+                <ul class="menu" id="menu">
+                    <li><button data-target="overview" aria-current="true">Overview</button></li>
+                    <li><button data-target="education">Education</button></li>
+                    <li><button data-target="skills">Skills</button></li>
+                    <li><button data-target="experience">Experience</button></li>
+                    <li><button data-target="misc">Misc.</button></li>
+                </ul>
+            </nav>
+            <div class="layout">
+                <main>
+                    <section id="overview" class="section" data-active="true">
+                        <h2>Overview</h2>
+                        <p>My name is Ryan Fiegle and I am a software developer. Originally trained as a computer engineer, I began web development as a hobby — running a PHP/MySQL blog/forum/picture host site for my friends. Years later, I have created software applications for global 500 companies in countries spanning the globe.</p>
+                        <ul>
+                            <li>Web applications</li>
+                            <li>Mobile applications</li>
+                            <li>Web Services</li>
+                            <li>Enterprise software</li>
+                        </ul>
+                    </section>
+                    <section id="education" class="section">
+                        <h2>Education</h2>
+                        <h3>North Carolina State University</h3>
+                        <ul>
+                            <li>B.S. in Computer Engineering</li>
+                            <li>B.S. in Electrical Engineering</li>
+                            <li>Graduated May 2005</li>
+                            <li>GPA: 3.24/4.00</li>
+                        </ul>
+                    </section>
+                    <section id="skills" class="section">
+                        <h2>Skills</h2>
+                        <div style="display:flex;gap:20px;flex-wrap:wrap">
+                            <div class="skillHeader">
+                                <h3>Languages</h3>
+                                <ul>
+                                    <li>C#</li>
+                                    <li>JavaScript</li>
+                                    <li>TypeScript</li>
+                                    <li>SQL</li>
+                                </ul>
+                            </div>
+                            <div class="skillHeader">
+                                <h3>Frameworks</h3>
+                                <ul>
+                                    <li>.NET</li>
+                                    <li>ASP.NET MVC</li>
+                                    <li>Web API</li>
+                                    <li>Entity Framework</li>
+                                    <li>React</li>
+                                    <li>Angular</li>
+                                    <li>.NET MAUI</li>
+                                </ul>
+                            </div>
+                            <div class="skillHeader">
+                                <h3>Cloud & DevOps</h3>
+                                <ul>
+                                    <li>Azure</li>
+                                    <li>Azure DevOps</li>
+                                    <li>GitHub Actions</li>
+                                    <li>Docker</li>
+                                    <li>Kubernetes</li>
+                                    <li>Azure Functions</li>
+                                    <li>Service Bus</li>
+                                    <li>Key Vault</li>
+                                    <li>Entra ID</li>
+                                </ul>
+                            </div>
+                            <div class="skillHeader">
+                                <h3>Architecture & Technologies</h3>
+                                <ul>
+                                    <li>REST</li>
+                                    <li>gRPC</li>
+                                    <li>MQTT</li>
+                                    <li>LINQ</li>
+                                    <li>Expression Trees</li>
+                                    <li>Microservices</li>
+                                    <li>CI/CD</li>
+                                </ul>
+                            </div>
+                            <div class="skillHeader">
+                                <h3>Databases</h3>
+                                <ul>
+                                    <li>SQL Server</li>
+                                    <li>SQLite</li>
+                                    <li>Oracle</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="experience" class="section">
+                        <h2>Experience</h2>
+                        <div class="exp-controls">
+                            <button class="btn" id="expandAll">Expand All</button>
+                            <button class="btn" id="collapseAll">Collapse All</button>
+                        </div>
+                        <article class="exp-item">
+                            <h3>Victra</h3>
+                            <button class="toggle" data-target="victra-details" aria-expanded="false">[+] Raleigh, NC: Software Engineer III, November 2023 to May 2025</button>
+                            <ul id="victra-details" hidden>
+                                <li>Was the first engineer to utilize a local NuGet repository to create NuGet packages to distribute reusable code for 1) sending messages (email, SMS, Teams) in a reliable, centralized way through a single app over a service bus, 2) to retrieve data from Workday, 3) common functionality used in 3rd party integrations, 4) to retrieve core data, 5) auth</li>
+                                <li>Architected, wrote, and maintained a .NET app to distribute alerts to stores and managers regarding in-store-pickups</li>
+                                <li>Architected, wrote, and maintained a .NET app to manage alarm pins for all users across all stores to guarantee that each user had a unique pin within a hierarchy within regions and kept the same pin across all assigned stores</li>
+                                <li>Maintained a customer survey app in React and .NET backend, including devising an updated way to send users a link to their survey and digital receipt that is secure, including using managed identity auth between applications</li>
+                                <li>Collaborated with a team to architect, write, and maintain a task management system for administrators to assign tasks to users using React and .NET backend, including working with expression trees to do backend filtering, sorting, paging</li>
+                                <li>Mentored several juniors and mid-level engineers; presented several demo sessions, including on using AI tooling</li>
+                                <li>I did my own devops work in Azure, including builds, releases, key vaults, service buses, Entra work, etc.</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>ECS, Limited</h3>
+                            <button class="toggle" data-target="ecs-details" aria-expanded="false">[+] Raleigh, NC: Software developer, July 2022 to November 2022</button>
+                            <ul id="ecs-details" hidden>
+                                <li>Architected and developed a .NET Maui application for technicians to complete forms regarding soil and concrete tests; used gRPC to deliver data back and forth between the app and server; used a sqlLite DB to manage app data</li>
+                                <li>Architected and developed a system to dynamically define and display forms delivered to the application</li>
+                                <li>Designed an Azure Function that used MQTT triggers to receive messages about submitted forms</li>
+                                <li>Worked on updating legacy APIs and updated existing Azure pipelines</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>Global Knowledge / Skillsoft</h3>
+                            <button class="toggle" data-target="gk-details" aria-expanded="false">[+] Cary, NC: Application developer, June 2020 to March 2022</button>
+                            <ul id="gk-details" hidden>
+                                <li>Wrote and maintained web services in .NET Framework, .NET Core and .NET 5/6 utilizing Entity and third party API calls; deployed to VM server via DevOps pipelines, or containerized and deployed to Azure k8s via Git Actions</li>
+                                <li>Wrote multiple Azure Function applications to perform scheduled and HTTP triggered tasks</li>
+                                <li>Used CrmSvcUtil.exe and T4 templates to generate C# code representing the data of the organization’s Dynamics 365 custom environment to be used throughout our microservices and processes and maintained as a package</li>
+                                <li>Advanced use of IQueryable datasets using Linq / Linq Expressions, such as creating dynamic filters</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>Hill-Rom</h3>
+                            <button class="toggle" data-target="hillrom-details" aria-expanded="false">[+] Cary, NC: Senior Developer, October 2019 to April 2020</button>
+                            <ul id="hillrom-details" hidden>
+                                <li>Wrote Azure Service Fabric service using .NET Core; wrote pipeline/release for Azure DevOps w/ Docker/Kubernetes</li>
+                                <li>Wrote MQTT broker customizations using Elixir and Erlang in Linux environment</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>North Carolina Housing Financial Agency</h3>
+                            <button class="toggle" data-target="nchfa-details" aria-expanded="false">[+] Raleigh, NC: Senior Developer, October 2017 to May 2019</button>
+                            <ul id="nchfa-details" hidden>
+                                <li>Used Agile process to continually introduce new features into an ASP.NET C# MVC web application with Web API RESTful services with SQL backend used by NCHFA, DHHS, and external vendors to provide housing to the disabled</li>
+                                <li>Extensive use of Autofac IoC including use of attributes that eliminated lazy loading, cutting a second off every load</li>
+                                <li>Used T4 templates to write classes; used TFS, MSTest, Linq, Entity Framework, NLog, and DelegateDecompiler</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>Advanced Animal Diagnostics</h3>
+                            <button class="toggle" data-target="aad-details" aria-expanded="false">[+] Morrisville, NC: Senior Developer, June 2016 to August 2017</button>
+                            <ul id="aad-details" hidden>
+                                <li>Maintained ExtJS site with Web API and SQL backend and WCF API</li>
+                                <li>Made multiple improvements including security, a SQL bulk upload, and made the Web API backend run twice as fast</li>
+                                <li>Created scheduled tasks with Quartz and automated Excel sheet creation with EPPlus</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>Cardinal Solutions</h3>
+                            <button class="toggle" data-target="cs-details" aria-expanded="false">[+] Morrisville, NC: .NET Developer, April 2014 to December 2014</button>
+                            <ul id="cs-details" hidden>
+                                <li>Designed and wrote multiple WCF web services</li>
+                                <li>Designed and wrote multiple JavaScript libraries and applications, including Windows 8 and Angular apps </li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>Credit Suisse</h3>
+                            <button class="toggle" data-target="suisse-details" aria-expanded="false">[+] Morrisville, NC: .NET Developer, May 2013 to November 2013</button>
+                            <ul id="suisse-details" hidden>
+                                <li>Maintained ASP.NET web form applications in C# with Oracle data backend</li>
+                                <li>Overhauled a legacy project written in 2007 to use a new client-side framework utilizing WCF services</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>JS Walker and Co.</h3>
+                            <button class="toggle" data-target="walker-details" aria-expanded="false">[+] Raleigh, NC: Associate Technology Consultant, October 2012 to December 2012</button>
+                            <ul id="walker-details" hidden>
+                                <li>Maintained ASP.NET web form applications in C# with SQL data backend</li>
+                                <li>Designed ASP.NET MVC applications with Razor</li>
+                                <li>Designed, administered and maintained an <a href="http://umbraco.com/">Umbraco</a> project</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>The Carolinas Center for Medical Excellence ( (CCME)</h3>
+                            <button class="toggle" data-target="ccme-details" aria-expanded="false">[+] Cary, NC: Web Developer, June 2012 to September 2012</button>
+                            <ul id="ccme-details" hidden>
+                                <li>Designed and implemented admin system primarily using jQuery calling generic C# JSON handlers</li>
+                                <li>Implemented certificate-secure WCF web service to deliver confidential PDF documents</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>College Foundation, Inc.</h3>
+                            <button class="toggle" data-target="cfnc-details" aria-expanded="false">[+] Raleigh, NC: Web Developer, March 2012 to June 2012</button>
+                            <ul id="cfnc-details" hidden>
+                                <li>Performed maintenance on the CFI website and support applications using ASP.NET 4.0 web forms in C#</li>
+                                <li>Used JavaScript with jQuery, a proprietary CMS, and SQL scripting for application support</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>XS, Inc.</h3>
+                            <button class="toggle" data-target="xs-details" aria-expanded="false">[+] Morrisville, NC: Web Developer, April 2011 to March 2012</button>
+                            <ul id="xs-details" hidden>
+                                <li>Worked as a web developer on multiple web projects using Linq and the Entity Framework in ASP.NET 4.0</li>
+                                <li>Used agile development methodology with the Scrum management framework and Team Foundation Server</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>Digital Tadpole, Inc.</h3>
+                            <button class="toggle" data-target="dti-details" aria-expanded="false">[+] Morrisville, NC: Senior Analyst, May 2007 to April 2011</button>
+                            <ul id="dti-details" hidden>
+                                <li>Performed the role of project manager for a 2,000 hour project and other projects</li>
+                                <li>Developed two iPhone applications using the Monotouch framework in C#</li>
+                                <li>Developed, deployed, and maintained multiple ASP.NET & .NET applications and services in VB.NET and C#</li>
+                                <li>Developed numerous server and user controls for use in multiple projects including an in-place html editor, a web-based media library and manager, and a tool to easily implement multiple languages on a website</li>
+                                <li>Extended our data accessor class library to be able to queue multiple database queries independently and then execute them simultaneously to increase efficiency</li>
+                                <li>Authored US Patent Application 11/977143, now US patent 7,975,033</li>
+                                <li>Designed a USB microcontroller circuit using Pad2Pad</li>
+                                <li>SQL scripting for application support</li>
+                            </ul>
+                        </article>
+                        <article class="exp-item">
+                            <h3>United States Patent and Trademark Office</h3>
+                            <button class="toggle" data-target="uspto-details" aria-expanded="false">[+] Alexandria, VA: Patent Examiner, May 2005 to May 2007</button>
+                            <ul id="uspto-details" hidden>
+                                <li>Examined patent applications dealing with microprocessors and microarchitecture</li>
+                                <li>Extensive technical writing and debating my position with attorneys and judges</li>
+                            </ul>
+                        </article>
+                    </section>
+                    <section id="misc" class="section">
+                        <h2>Miscellaneous</h2>
+                        <ul>
+                            <li>Wrote and maintaining <a href="https://github.com/goNinjaGo/QueryExpress" target="_blank" rel="noopener">QueryExpress</a>, a library for server-side filtering, sorting, and paging of large datasets</li>
+                            <li>Senior class president of the 2001 class of Massey Hill Classical High School</li>
+                            <li>Attained Eagle Scout rank, Boy Scouts of America</li>
+                            <li>Received $8,750 in scholarships for academic achievement</li>
+                            <li>Guitar and bass player</li>
+                        </ul>
+                    </section>
+                </main>
+                <aside>
+                    <div class="card">
+                        <h2>Contact</h2>
+                        <h3>Email</h3>
+                        <p><a href="mailto:rpfiegle@gmail.com">rpfiegle@gmail.com</a></p>
+                        <h3>Phone</h3>
+                        <p>(919) 656-7081</p>
+                    </div>
+                    <div class="card" style="margin-top:12px">
+                        <h2>Other Links</h2>
+                        <p><a href="https://drive.google.com/uc?export=download&id=1vtgHGOMrhM3RzbwwU24kScsYsWRyBMsX" target="_blank" rel="noopener">PDF Résumé</a></p>
+                        <p><a href="https://drive.google.com/uc?export=download&id=1EQXCGDhyWgZGHIzYNjvwL3lOawEeBJsb" target="_blank" rel="noopener">Word Résumé</a></p>
+                        <p><a href="https://drive.google.com/uc?export=download&id=1QGsHwiZAI2YKtgvaOl5Uiyl5Mld2juHT" target="_blank" rel="noopener">Text Résumé</a></p>
+                        <p><a href="http://stackoverflow.com/users/322788/dtryan?tab=summary" target="_blank" rel="noopener">Stack Overflow</a></p>
+                        <p><a href="https://github.com/goNinjaGo/QueryExpress" target="_blank" rel="noopener">QueryExpress</a></p>
+                    </div>
+                </aside>
+            </div>
+            <footer>Ryan Fiegle | 2026</footer>
+        </div>
+        <script>
+            (function () {
+                const menu = document.getElementById('menu');
+                const sections = document.querySelectorAll('.section');
+                const collapseRegex = /^\[.\]\s*/;
+                function showSection(id) {
+                    sections.forEach(s => s.dataset.active = (s.id === id));
+                    document.querySelectorAll('#menu button').forEach(b => b.setAttribute('aria-current', b.dataset.target === id));
+                }
+                menu.addEventListener('click', e => {
+                    const btn = e.target.closest('button[data-target]'); if (!btn) return; const t = btn.dataset.target; showSection(t); history.replaceState(null, '', '#' + t);
+                });
+                document.addEventListener('click', e => {
+                    const t = e.target.closest('.toggle'); if (!t) return; const id = t.dataset.target; const list = document.getElementById(id); if (!list) return; const expanded = t.getAttribute('aria-expanded') === 'true'; t.setAttribute('aria-expanded', String(!expanded)); if (expanded) { list.hidden = true; t.textContent = '[+] ' + t.textContent.replace(collapseRegex, '').trim(); } else { list.hidden = false; t.textContent = '[-] ' + t.textContent.replace(collapseRegex, '').trim(); }
+                });
+                document.getElementById('expandAll').addEventListener('click', () => { document.querySelectorAll('.exp-item ul').forEach(u => u.hidden = false); document.querySelectorAll('.exp-item .toggle').forEach(t => { t.setAttribute('aria-expanded', 'true'); t.textContent = '[-] ' + t.textContent.replace(collapseRegex, '').trim() }); });
+                document.getElementById('collapseAll').addEventListener('click', () => { document.querySelectorAll('.exp-item ul').forEach(u => u.hidden = true); document.querySelectorAll('.exp-item .toggle').forEach(t => { t.setAttribute('aria-expanded', 'false'); t.textContent = '[+] ' + t.textContent.replace(collapseRegex, '').trim() }); });
+                const hash = location.hash.replace('#', ''); if (hash && document.getElementById(hash)) showSection(hash); else showSection('overview');
+            })();
+        </script>
+    </body>
+</html>
