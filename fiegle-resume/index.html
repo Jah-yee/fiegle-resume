@@ -274,7 +274,7 @@
                             <div class="skillHeader">
                                 <h3>Frameworks</h3>
                                 <ul>
-                                    <li>.NET</li>
+                                    <li>.NET (Framework through 11)</li>
                                     <li>ASP.NET MVC</li>
                                     <li>Web API</li>
                                     <li>Entity Framework</li>
@@ -336,7 +336,7 @@
                                 <li>Maintained a customer survey app in React and .NET backend, including devising an updated way to send users a link to their survey and digital receipt that is secure, including using managed identity auth between applications</li>
                                 <li>Collaborated with a team to architect, write, and maintain a task management system for administrators to assign tasks to users using React and .NET backend, including working with expression trees to do backend filtering, sorting, paging</li>
                                 <li>Mentored several juniors and mid-level engineers; presented several demo sessions, including on using AI tooling</li>
-                                <li>I did my own devops work in Azure, including builds, releases, key vaults, service buses, Entra work, etc.</li>
+                                <li>Managed Azure DevOps and cloud infrastructure, including CI/CD pipelines, releases, Key Vault, Service Bus, Entra</li>
                             </ul>
                         </article>
                         <article class="exp-item">
@@ -498,14 +498,43 @@
                     document.querySelectorAll('#menu button').forEach(b => b.setAttribute('aria-current', b.dataset.target === id));
                 }
                 menu.addEventListener('click', e => {
-                    const btn = e.target.closest('button[data-target]'); if (!btn) return; const t = btn.dataset.target; showSection(t); history.replaceState(null, '', '#' + t);
+                    const btn = e.target.closest('button[data-target]'); 
+                    if (!btn) return; const t = btn.dataset.target; 
+                    showSection(t); 
+                    history.replaceState(null, '', '#' + t);
                 });
                 document.addEventListener('click', e => {
-                    const t = e.target.closest('.toggle'); if (!t) return; const id = t.dataset.target; const list = document.getElementById(id); if (!list) return; const expanded = t.getAttribute('aria-expanded') === 'true'; t.setAttribute('aria-expanded', String(!expanded)); if (expanded) { list.hidden = true; t.textContent = '[+] ' + t.textContent.replace(collapseRegex, '').trim(); } else { list.hidden = false; t.textContent = '[-] ' + t.textContent.replace(collapseRegex, '').trim(); }
+                    const t = e.target.closest('.toggle'); 
+                    if (!t) return; 
+                    const id = t.dataset.target; 
+                    const list = document.getElementById(id); 
+                    if (!list) return; 
+                    const expanded = t.getAttribute('aria-expanded') === 'true'; 
+                    t.setAttribute('aria-expanded', String(!expanded)); 
+                    if (expanded) { 
+                        list.hidden = true; 
+                        t.textContent = '[+] ' + t.textContent.replace(collapseRegex, '').trim(); 
+                    } else { 
+                        list.hidden = false; 
+                        t.textContent = '[-] ' + t.textContent.replace(collapseRegex, '').trim(); 
+                    }
                 });
-                document.getElementById('expandAll').addEventListener('click', () => { document.querySelectorAll('.exp-item ul').forEach(u => u.hidden = false); document.querySelectorAll('.exp-item .toggle').forEach(t => { t.setAttribute('aria-expanded', 'true'); t.textContent = '[-] ' + t.textContent.replace(collapseRegex, '').trim() }); });
-                document.getElementById('collapseAll').addEventListener('click', () => { document.querySelectorAll('.exp-item ul').forEach(u => u.hidden = true); document.querySelectorAll('.exp-item .toggle').forEach(t => { t.setAttribute('aria-expanded', 'false'); t.textContent = '[+] ' + t.textContent.replace(collapseRegex, '').trim() }); });
-                const hash = location.hash.replace('#', ''); if (hash && document.getElementById(hash)) showSection(hash); else showSection('overview');
+                document.getElementById('expandAll').addEventListener('click', () => { 
+                    document.querySelectorAll('.exp-item ul').forEach(u => u.hidden = false);
+                    document.querySelectorAll('.exp-item .toggle').forEach(t => { 
+                        t.setAttribute('aria-expanded', 'true'); 
+                        t.textContent = '[-] ' + t.textContent.replace(collapseRegex, '').trim() 
+                    }); 
+                });
+                document.getElementById('collapseAll').addEventListener('click', () => { 
+                    document.querySelectorAll('.exp-item ul').forEach(u => u.hidden = true); 
+                    document.querySelectorAll('.exp-item .toggle').forEach(t => { 
+                        t.setAttribute('aria-expanded', 'false'); 
+                        t.textContent = '[+] ' + t.textContent.replace(collapseRegex, '').trim() 
+                    }); 
+                });
+                const hash = location.hash.replace('#', ''); 
+                if (hash && document.getElementById(hash)) showSection(hash); else showSection('overview');
             })();
         </script>
     </body>
